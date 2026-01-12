@@ -1,0 +1,103 @@
+/**
+ * Rate Limit Toast Notification Styles
+ */
+
+.rate-limit-toast {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    max-width: 400px;
+    padding: 16px 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    z-index: 9999;
+    transform: translateX(120%);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    font-family: system-ui, -apple-system, sans-serif;
+}
+
+.rate-limit-toast--visible {
+    transform: translateX(0);
+    opacity: 1;
+}
+
+.rate-limit-toast--warning {
+    background: linear-gradient(135deg, #fef3cd 0%, #fff3cd 100%);
+    border: 1px solid #ffc107;
+    color: #856404;
+}
+
+.rate-limit-toast--critical {
+    background: linear-gradient(135deg, #f8d7da 0%, #ffebee 100%);
+    border: 1px solid #dc3545;
+    color: #721c24;
+}
+
+.rate-limit-toast__icon {
+    font-size: 24px;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.rate-limit-toast__content {
+    flex: 1;
+}
+
+.rate-limit-toast__content strong {
+    display: block;
+    margin-bottom: 4px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.rate-limit-toast__content p {
+    margin: 0;
+    font-size: 13px;
+    line-height: 1.4;
+    opacity: 0.9;
+}
+
+.rate-limit-toast__close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0.5;
+    padding: 0;
+    line-height: 1;
+    color: inherit;
+    transition: opacity 0.2s;
+}
+
+.rate-limit-toast__close:hover {
+    opacity: 1;
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .rate-limit-toast--warning {
+        background: linear-gradient(135deg, #4a4528 0%, #3d3a1f 100%);
+        border-color: #b8860b;
+        color: #ffc107;
+    }
+
+    .rate-limit-toast--critical {
+        background: linear-gradient(135deg, #4a2428 0%, #3d1f22 100%);
+        border-color: #a71d2a;
+        color: #f8d7da;
+    }
+}
+
+/* Mobile responsive */
+@media (max-width: 480px) {
+    .rate-limit-toast {
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        max-width: none;
+    }
+}

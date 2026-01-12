@@ -1,0 +1,51 @@
+@import './rate-limit-toast.css';
+@import 'intl-tel-input/build/css/intlTelInput.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[x-cloak] {
+    display: none;
+}
+
+/* International Telephone Input Customizations */
+.iti {
+    @apply w-full;
+}
+
+.iti__tel-input {
+    @apply w-full;
+}
+
+.iti__country-container {
+    @apply rounded-l-md;
+}
+
+.iti__dropdown {
+    @apply shadow-lg rounded-md border border-gray-200 bg-white z-50;
+}
+
+.iti__search-input {
+    @apply w-full px-3 py-2 border-b border-gray-200 focus:outline-none focus:ring-2 focus:ring-indigo-500;
+}
+
+.iti__country-list {
+    @apply max-h-64 overflow-y-auto;
+}
+
+.iti__country {
+    @apply px-3 py-2 hover:bg-indigo-50 cursor-pointer transition-colors;
+}
+
+.iti__country--highlight {
+    @apply bg-indigo-100;
+}
+
+.iti__dial-code {
+    @apply text-gray-500 ml-1;
+}
+
+.iti__selected-dial-code {
+    @apply text-gray-700 ml-1 text-sm;
+}
